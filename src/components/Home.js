@@ -29,7 +29,7 @@ const Home = () => {
         const response = await axios.post('https://localhost:7243/api/auth/logout', {}, {
           withCredentials: true,
         });
-        console.log('Logout thành công', response);
+        // console.log('Logout thành công', response);
         navigate('/');
       } catch (error) {
         console.error('Lỗi đăng xuất:', error);

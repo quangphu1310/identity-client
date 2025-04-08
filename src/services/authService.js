@@ -52,3 +52,27 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+export const register = async ({ username, password, confirmPassword }) => {
+  try {
+    const res = await axios.post(`${API_URL}/register`, {
+      username,
+      password,
+      confirmPassword,
+    });
+
+    if (res.data.isSuccess) {
+      return { success: true, message: res.data.result };
+    }
+
+    return {
+      success: false,
+      message: res.data.errors,
+    };
+  } catch (err) {
+    return {
+      success: false,
+      message: err.response?.data?.errors || ['Lỗi trong quá trình đăng ký'],
+    };
+  }
+};
+

@@ -6,18 +6,14 @@ import React from 'react';
 import Home from './components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RegisterForm from './components/RegisterForm';
 function App() {
-  // return (
-  //   <div className="App">
-  //     <LoginForm />
-  //     <Test />
-  //   </div>
-  // );
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<RegisterForm />} />
       </Routes>
     </BrowserRouter>
   );

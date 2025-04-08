@@ -33,11 +33,11 @@ const LoginForm = () => {
                   <label htmlFor="username" className="form-label">Tên người dùng</label>
                   <input
                     name="username"
-                    type="text"
+                    type="email"
                     id="username"
                     className="form-control"
                     onChange={handleChange}
-                    placeholder="Nhập tên người dùng"
+                    placeholder="example@email.com"
                     required
                   />
                 </div>
@@ -59,6 +59,10 @@ const LoginForm = () => {
               </form>
 
               {message && <p className="mt-3 text-center">{message}</p>}
+
+              <div className="mt-3 text-center">
+                <a href="/register">Chưa có tài khoản? Đăng ký ngay!</a>
+              </div>
             </div>
           </div>
         </div>
